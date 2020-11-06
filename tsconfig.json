@@ -1,0 +1,15 @@
+{
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "lib",
+    "paths": {
+      "@core/*": [
+        "./core/*"
+      ],
+      "@main*": [
+        "./*"
+      ]
+    }
+  },
+}
