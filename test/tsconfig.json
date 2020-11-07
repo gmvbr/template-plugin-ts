@@ -6,7 +6,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@test": [
+      "@test/*": [
         "./*"
       ],
       "@core/*": [
