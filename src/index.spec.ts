@@ -3,10 +3,13 @@ import fastify from 'fastify';
 
 describe('test plugin', () => {
   it('register plugin', async () => {
-    expect(async () => {
-      const app = fastify().register(Plugin, {name: 'test'});
+    const app = fastify();
+    app.register(Plugin, {name: 'test'});
+    try {
       await app.listen(0);
       await app.close();
-    }).not.toThrow();
+    } catch (e) {
+      expect(e).toBeUndefined();
+    }
   });
 });
