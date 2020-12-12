@@ -1,16 +1,12 @@
-import {expect} from 'chai';
-import {describe, it} from 'mocha';
-
-import Plugin from '@main';
+import Plugin from './index';
 import fastify from 'fastify';
 
 describe('test plugin', () => {
   it('register plugin', async () => {
-    const app = fastify();
-    app.register(Plugin, {name: 'test'});
     expect(async () => {
+      const app = fastify().register(Plugin, {name: 'test'});
       await app.listen(0);
       await app.close();
-    }).not.throw();
+    }).not.toThrow();
   });
 });
